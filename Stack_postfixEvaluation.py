@@ -26,11 +26,11 @@ def postfixEval(postfix_str):
     for token in postfix_list:
         
         if type_ch(token):
-            op_stack.push(token)
+            op_stack.push(int(token))
                       
         else:
-           op2 = int(op_stack.pop())
-           op1 = int(op_stack.pop())
+           op2 = op_stack.pop()
+           op1 = op_stack.pop()
            op_stack.push(evaluateFunc(token,op1,op2))
    
     return op_stack.pop()
@@ -41,10 +41,12 @@ def type_ch(x):
         return True
     except:
         return False
-  
-#x = infixToPostfix("10 + 10 * 5 / ( 26 - 1 )")
-x = infixToPostfix("5 * 3^(4 - 2)")
 
+s = str(input("Enter your expression with spaces in between characters"))
+#x = infixToPostfix("10 + 10 * 5 / ( 26 - 1 )")
+#x = infixToPostfix("15 * 3 ^ (  14 - 12 )")
+#print x
+x = infixToPostfix(s)
 print(postfixEval(x))
 
 

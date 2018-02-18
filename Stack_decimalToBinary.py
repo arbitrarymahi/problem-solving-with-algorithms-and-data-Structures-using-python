@@ -33,8 +33,8 @@ def deciToBase(deci,base):
    
     return newString
         
-print(deciToBase(25,8))
-print(deciToBase(256,16))
-print(deciToBase(16,16))
+print(deciToBase(17,2))
+print(deciToBase(45,2))
+print(deciToBase(96,2))
 print(deciToBase(8,8))
 print(deciToBase(2,2))

@@ -9,9 +9,11 @@ def type_ch(x):
 
 def infixToPostfix(infix_expr):
     postfix_str = []
-#    token_list = infix_expr.split() #for input string with spaces-separated-characters
-    token_list =list(infix_expr) #for input string without spaces-separated-characters **all or some chars**
-    
+    token_list = infix_expr.split() #for input string with spaces-separated-characters
+#    token_list =list(infix_expr) #for input string without spaces-separated-characters **all or some chars**
+    #doesn't work with numbers over 9 since 
+    #they have more than one character
+    #print(token_list)
     while ' ' in token_list:
         token_list.remove(' ')
     
@@ -44,9 +46,9 @@ def infixToPostfix(infix_expr):
     return str(' '.join(postfix_str)) #return postfix with spaces
 #    return str(''.join(postfix_str)) #return postfix without spaces
 
-
-"""print(infixToPostfix("(A+B)^X*(C+D)"))
-print(infixToPostfix("5 * 3^(4 - 2)"))  #string without spaces
+#print(infixToPostfix("15 * 3 ^ ( 4 - 2 )")) 
+"""print(infixToPostfix("(A + B ) ^ X * ( C +  D )"))
+print(infixToPostfix("5 * 3 ^ ( 4 - 2 )"))  #string without spaces
 print(infixToPostfix("A * B + C * D"))  #string with spaces
 print(infixToPostfix("( A + B ) * C - ( D - E ) * ( F + G )"))
 print infixToPostfix("( A + B ) * ( C + D )") 
